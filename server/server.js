@@ -23,8 +23,10 @@ app.post('/todos', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log('Listening on port ${port}')
+    console.log(`Listening on port ${port}`);
 });
+
+module.exports = {app};
 
 
 
