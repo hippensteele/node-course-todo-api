@@ -20,7 +20,7 @@ app.post('/todos', (req, res) => {
         res.send(doc); 
     },(e) => {
         res.status(400).send(); 
-        console.log(e);
+        // console.log(e);
     });
 });
 
@@ -29,7 +29,7 @@ app.get('/todos', (req, res) => {
         res.send({todos}); 
     },(e) => {
         res.status(400).send(); 
-        console.log(e);
+        // console.log(e);
     });
 });
 
@@ -45,7 +45,7 @@ app.get('/todos/:id', (req, res) => {
         res.send({todo}); 
     },(e) => {
         res.status(400).send(); 
-        console.log(e);
+        // console.log(e);
     });
 });
 
@@ -55,21 +55,6 @@ app.listen(port, () => {
 
 module.exports = {app};
 
-
-
-
-// var newTodo = new Todo({ 
-//     text: 'Buy coffee',
-//     // completed: true,
-//     // completedAt: Math.round((new Date()).getTime() / 1000) // unix timestamp
-// });
-
-// newTodo.save().then((doc) => {
-//     console.log('Saved todo', doc); 
-    // mongoose.disconnect();
-// },(e) => {
-//     console.log('Unable to save todo', e); 
-// });
 
 // var newUser = new User({
 //     email: 'hippensteele@gmail.com'
