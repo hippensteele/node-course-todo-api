@@ -1,3 +1,5 @@
+require('./config/config');
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const {ObjectID} = require('mongodb');
@@ -7,7 +9,7 @@ var { mongoose } = require('./db/mongoose');
 var { Todo } = require('./models/todo');
 var { User } = require('./models/user');
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT;
 
 var app = express();
 
@@ -92,15 +94,3 @@ app.listen(port, () => {
 });
 
 module.exports = {app};
-
-
-// var newUser = new User({
-//     email: 'hippensteele@gmail.com'
-// });
-
-// newUser.save().then((doc) => {
-//     console.log('Saved user', doc);
-//     mongoose.disconnect();
-// },(e) => {
-//     console.log('Unable to save user', e);
-// });
