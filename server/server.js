@@ -93,7 +93,7 @@ app.post('/users', (req, res) => {
     user.save().then(() => {
         return user.generateAuthToken();
     },(e) => {
-        console.log(e);
+        // console.log(e);
         if (e.errors.email.message){
             return res.status(400).send(e.errors.email.message);
         }
@@ -101,7 +101,7 @@ app.post('/users', (req, res) => {
     }).then((token) => {
         res.header('x-auth',token).send(user);
     }).catch((e) => {
-        console.log(e);
+        // console.log(e);
         res.status(400).send();
     });
 });
